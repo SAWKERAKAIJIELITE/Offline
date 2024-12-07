@@ -1,0 +1,51 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.6506748309526527 -0.2117353631541311 0.7292396042143661 3.6075799056323716
+  position 0.33492339802209165 -0.14521030492410286 1.6075639379539393
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 2 2
+  floorAppearance Appearance {
+    texture ImageTexture {
+      url [
+        "../../line.png"
+      ]
+      repeatS FALSE
+      repeatT FALSE
+    }
+    textureTransform TextureTransform {
+      scale 0.25 0.25
+    }
+  }
+}
+E-puck {
+  translation 0.154176 -0.474193 -6.3962e-05
+  rotation -0.0020560445896704 0.001025980372814099 -0.9999973600189752 0.9359970410749245
+  controller "wall_following_2"
+}
+E-puck {
+  translation 0.29 -0.399999 -6.39618e-05
+  rotation 4.559057652700204e-09 1.2215969153230062e-09 1 0.523598999999989
+  name "e-puck(1)"
+  controller "one_sensor_line_following"
+  groundSensorsSlot [
+    DistanceSensor {
+      translation 0 0 0.007
+      rotation 0 1 0 1.57
+      name "line follow sensor"
+      type "infra-red"
+    }
+  ]
+}
